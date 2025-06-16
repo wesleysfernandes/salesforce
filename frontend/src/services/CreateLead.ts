@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const apiCreateLead = axios.create({
     baseURL: "http://localhost:8080/api/salesforce/client",
-    timeout: 10000,
+    timeout: 12000,
     headers: {
         "Content-Type": "application/json",
     },
@@ -19,7 +19,7 @@ export interface LeadData {
 export const processData = async (data: LeadData) => {
   try {
     const payload = {
-      ownerName: data.ownerName,
+      name: data.ownerName,
       cpf: data.cpf,
       birthDate: data.birthDate,
       income: data.income

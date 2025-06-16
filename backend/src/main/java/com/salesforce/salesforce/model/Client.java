@@ -2,6 +2,7 @@ package com.salesforce.salesforce.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,10 +17,13 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "name")
     private String name;
+    @Column(name = "cpf")
     private String cpf;
+    @Column(name = "birthdate")
     private LocalDate birthDate;
+    @Column(name = "income")
     private double income;
 
     // Constructors
